@@ -40,10 +40,10 @@ export default class SavedArticles extends Component {
 
   render() {
     return (
-      <div class="container-fluid pageBody">
-        <div class="row">
+      <div className="container-fluid pageBody">
+        <div className="row">
         <div className="col-sm-1"></div>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <div className="panel panel-primary">
               <div className="panel-heading bg-light clearfix">
                 <h3>Saved Articles</h3>

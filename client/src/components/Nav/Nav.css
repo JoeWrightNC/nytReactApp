@@ -58,14 +58,9 @@
     font-weight:bold;
     text-shadow: black 3px 3px;
     font-size:3em;
-    padding-top:170px;
   }
   
   .subHeaderText {
-    color:white;
-    font-weight: bold;
-    text-shadow: black 3px 3px;
-    font-size: 2em;
-    padding-top:3px;
+    display: none;
   }
 }

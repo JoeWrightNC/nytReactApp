@@ -61,3 +61,8 @@ body {
   height:auto;
   z-index:1000;
 }
+
+.btn {
+  border-radius: 5px;
+  overflow: hidden;
+}
