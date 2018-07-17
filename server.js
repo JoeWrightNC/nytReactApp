@@ -23,8 +23,8 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Add routes, both API and view
 app.use(routes);
 
-// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/articleSearch";
+// If deployed, use the deployed database. Otherwise use the local database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytBookReviews";
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
