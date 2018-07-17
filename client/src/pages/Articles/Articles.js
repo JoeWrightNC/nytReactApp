@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { Article } from '../../components/Article'
+import { Article } from "../../components/Article"
 
 
 export default class Articles extends Component {
   state = {
-    searchTerm: '',
-    startYear: '',
-    endYear: '',
-    page: '0',
+    searchTerm: "",
+    startYear: "",
+    endYear: "",
+    page: "0",
     previousSearch: {},
     results: [],
     noResults: false,
@@ -61,9 +61,9 @@ export default class Articles extends Component {
     let queryUrl = `https://api.nytimes.com/svc/search/v2/articlesearch.json?sort=newest&page=${this.state.page}`
     let key = `&api-key=2b4af346ebca46a08d42029aacff4a1d`
 
-    //regex to remove spaces from search term and replace with plus symbol, better ux nyt params won't take spaces
-    if(searchTerm.indexOf(' ')>=0){
-      searchTerm = searchTerm.replace(/\s/g, '+');
+    //regex to remove spaces from search term and replace with plus symbol, better ux nyt params won"t take spaces
+    if(searchTerm.indexOf(" ")>=0){
+      searchTerm = searchTerm.replace(/\s/g, "+");
     }
     //add each provided parameter to queryURL before adding it to key and pinging API
     if (searchTerm){
@@ -87,9 +87,9 @@ export default class Articles extends Component {
           this.setState({
             results: [...this.state.results, ...results.data.response.docs],
             previousSearch: query,
-            searchTerm: '',
-            startYear: '',
-            endYear: ''
+            searchTerm: "",
+            startYear: "",
+            endYear: ""
           }, function (){
             this.state.results.length === 0 ? this.setState({noResults: true}) : this.setState({noResults: false})
           });
@@ -111,51 +111,47 @@ export default class Articles extends Component {
 
   render() {
     return (
-      <div className="container container-fluid">
+      <div className="container-fluid pageBody">
         <div className="row">
           <div className="col-sm-1"></div>
           <div className="col-sm-10">
-            <div className="jumbotron">
-              <h1 className='page-header text-center'>New York Times Article Searcher</h1>
-              <h4 className='text-center'>Search for and save articles of interest</h4>
-            </div>
-            <div className="panel panel-primary">
+            <div className="panel panel-primary bg-light">
             <div className="panel-heading clearfix">
               <div className="panel-heading clearfix">
                 <h3>Search</h3>
               </div>
               <div className="panel-body">
-                <form style={{marginBottom: '30px'}}>
-                  <div className='form-group'>
+                <form style={{marginBottom: "30px"}}>
+                  <div className="form-group">
                     <label htmlFor="searchTerm">Enter a searchTerm to search for:</label>
                     <input className="form-control"
                       onChange={this.handleInputChange}
-                      name='searchTerm'
+                      name="searchTerm"
                       value={this.state.searchTerm}
-                      placeholder='searchTerm'
+                      placeholder="searchTerm"
                     />
                   </div>
-                  <div className='form-group'>
-                    <label htmlFor="startYear">Enter a beginning date to search htmlFor (optional):</label>
+                  <div className="form-group">
+                    <label htmlFor="startYear">Enter a Starting Date (optional):</label>
                     <input className="form-control"
                       onChange={this.handleInputChange}
-                      type='date'
-                      name='startYear'
+                      type="date"
+                      name="startYear"
                       value={this.state.startYear}
-                      placeholder='Start Year'
+                      placeholder="Start Year"
                     />
                   </div>
-                  <div className='form-group'>
-                    <label htmlFor="endYear">Enter an end date to search for (optional):</label>
+                  <div className="form-group">
+                    <label htmlFor="endYear">Enter an Ending Date (optional):</label>
                     <input className="form-control"
                       onChange={this.handleInputChange}
-                      type='date'
-                      name='endYear'
+                      type="date"
+                      name="endYear"
                       value={this.state.endYear}
-                      placeholder='End Year'
+                      placeholder="End Year"
                     />
                   </div>
-                  <button className="submitBtn" disabled={!(this.state.searchTerm)} onClick={this.handleFormSubmit} type='info'>
+                  <button className="submitBtn" disabled={!(this.state.searchTerm)} onClick={this.handleFormSubmit} type="info">
                     Submit
                   </button>
                 </form>
@@ -167,7 +163,7 @@ export default class Articles extends Component {
               this.state.results.length>0 ? (
                 <div className="panel panel-primary">
                 <div className="panel-heading clearfix">
-                  <div className="panel-heading clearfix">
+                  <div className="panel-heading bg-light clearfix">
                     <h3>Results</h3>
                   </div>
                   <div className="panel-body">
@@ -179,7 +175,7 @@ export default class Articles extends Component {
                             url={article.web_url}
                             summary={article.snippet}
                             date={article.pub_date}
-                            type='Save'
+                            type="Save"
                             onClick={() => this.save(article)}
                           />
                         )
@@ -192,7 +188,7 @@ export default class Articles extends Component {
                 </div>
                 </div>
                 //if no results do not print this block
-              ) : ''
+              ) : ""
             }
           </div>
           <div className="col-sm-1"></div>

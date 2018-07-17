@@ -9,12 +9,14 @@ const App = () =>
   <Router>
     <div>
       <Nav />
+      <div class="background">
       <Switch>
         <Route exact path="/" component={Articles} />
         <Route exact path="/articles" component={Articles} />
         <Route exact path="/savedArticles" component={SavedArticles} />
         <Route component={NoMatch}/>
       </Switch>
+      </div>
     </div>
   </Router>;
 

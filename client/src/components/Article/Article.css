@@ -1,3 +1,12 @@
+.list-group {
+  margin-top: 5vh;
+  margin-bottom:5vh;
+  border-radius: 25px;
+  padding-top:3vh;
+  padding-right:3vw;
+  padding-left:3vw;
+}
+
 .titleLinkContainer {
   height:auto;
 }
@@ -7,7 +16,7 @@
 }
 
 .title {
-  height:auto;
+  font-size:2em;
 }
 
 .summaryContainer {
@@ -19,9 +28,11 @@
 }
 
 .btn-group {
-  height:auto;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom:3vh;
 }
 
-.btn {
-  height:auto;
+.btnLeft {
+  margin-right: 5vw;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { Article } from '../../components/Article'
+import { Article } from "../../components/Article"
 
 
 
@@ -40,16 +40,12 @@ export default class SavedArticles extends Component {
 
   render() {
     return (
-      <div class="container-fluid">
+      <div class="container-fluid pageBody">
         <div class="row">
         <div className="col-sm-1"></div>
           <div class="col-sm-10">
-            <div class="jumbotron">
-              <h1 className="text-center">Saved New York Times Articles</h1>
-              <hr className="horizontalRule"/>
-            </div>
             <div className="panel panel-primary">
-              <div className="panel-heading clearfix">
+              <div className="panel-heading bg-light clearfix">
                 <h3>Saved Articles</h3>
               </div>
               <div className="panel-body">
@@ -61,7 +57,7 @@ export default class SavedArticles extends Component {
                       url={article.url}
                       summary={article.summary}
                       date={article.date}
-                      type='Delete'
+                      type="Delete"
                       onClick={() => this.delete(article._id)}
                     />
                     )
