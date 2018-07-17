@@ -6,6 +6,7 @@ import NoMatch from "./pages/NoMatch";
 import Nav from './components/Nav';
 
 const App = () =>
+<div>
   <Router>
     <div>
       <Nav />
@@ -18,7 +19,7 @@ const App = () =>
       </Switch>
       </div>
     </div>
-  </Router>;
-
+  </Router>
+</div>;
 
 export default App;
